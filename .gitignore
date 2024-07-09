@@ -5,7 +5,9 @@ __pycache__/
 
 # C extensions
 *.so
-
+checkpoints/
+images/
+tensorboard/
 # Distribution / packaging
 .Python
 build/
