@@ -39,8 +39,8 @@ class MCDropout(object):
         self.entropy = -np.sum(clipped_probs * np.log(clipped_probs), axis=1)
         print('self.entropy.shape', self.entropy.shape)
     
-    def __call__(self, model, dataloader, iter=10, dropout=True):
-        self.inference(model, dataloader, iter=iter, dropout=dropout)
+    def __call__(self, model, dataloader, iter=10):
+        self.inference(model, dataloader, iter=iter)
         self.calc_mean()
         self.calc_entropy()
         
