@@ -41,15 +41,17 @@ if __name__ == "__main__":
     model = CNN(n_class=10)
     model.load_state_dict(torch.load('./checkpoints/EXPFL/Naive_test.pt'))
     
-    cam = GradCAM(model=model, target_layers=[model.conv1])
-    grayscale_cam = cam(input_tensor=input_tensor)
-    grayscale_cam = grayscale_cam[0, :]
-    rgb_img = np.array(data[0].permute(1,2,0))
+    # cam = GradCAM(model=model, target_layers=[model.conv1])
+    # grayscale_cam = cam(input_tensor=input_tensor)
+    # grayscale_cam = grayscale_cam[0, :]
+    # rgb_img = np.array(data[0].permute(1,2,0))
+    
+    
     
     # Plot figures
     import matplotlib.pyplot as plt
     plt.imshow(grayscale_cam)
     plt.savefig('cam.png')
-    visualization = show_cam_on_image(rgb_img, grayscale_cam, use_rgb=True)
+    # visualization = show_cam_on_image(rgb_img, grayscale_cam, use_rgb=True)
     Image.fromarray((visualization*255).astype(np.uint8)).save('test.png')
     print('Done')
