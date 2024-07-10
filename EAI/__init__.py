@@ -1,2 +1,2 @@
-from EAI.DeepEnsemble import *
-from EAI.MCDropout import *
+from EAI.deepEnsemble import *
+from EAI.mcDropout import *

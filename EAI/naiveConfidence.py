@@ -1,5 +1,5 @@
 import torch
-from EAI.DeepEnsemble import *
+from EAI.deepEnsemble import *
 
 '''
 Naive Softmax Confidence is identical to DeepEnsemble with single model.
