@@ -4,8 +4,10 @@ from torchvision import models, transforms
 import numpy as np
 import cv2
 from PIL import Image
-
-
+'''
+Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization
+https://arxiv.org/abs/1610.02391
+'''
 if __name__ == "__main__":
     import sys
     sys.path.insert(0, '/home/eis/disk5/Kichang/EXPFL')

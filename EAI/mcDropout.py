@@ -1,6 +1,9 @@
 import torch
 import numpy as np
-
+'''
+Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning
+https://arxiv.org/abs/1506.02142
+'''
 class MCDropout(object):
     def __init__(self):
         super(MCDropout, self).__init__()

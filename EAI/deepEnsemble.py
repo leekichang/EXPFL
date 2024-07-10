@@ -1,6 +1,9 @@
 import torch
 import numpy as np
-
+'''
+Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles
+https://arxiv.org/abs/1612.01474
+'''
 class DeepEnsemble(object):
     def __init__(self):
         super(DeepEnsemble, self).__init__()
