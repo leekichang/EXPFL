@@ -10,15 +10,10 @@ class MCDropout(object):
         self.targets = None
         self.preds   = []
     
-    def inference(self, model, dataloader, iter=10, dropout=True):
+    def inference(self, model, dataloader, iter=10):
         model.to(self.device)
         model.train() # For MC Dropout we need to set the model to evaluation mode
         self.targets = dataloader.dataset.targets.numpy()
-        if not dropout: # Naive Vanila Confidence Based Uncertainty Measurement
-            if iter != 1:
-                print('Warning: iter is not 1, but dropout is False. Setting iter to 1')
-                iter = 1
-            model.eval()
         with torch.no_grad():
             for idx, (data, target) in enumerate(dataloader):
                 data = data.to(self.device)
