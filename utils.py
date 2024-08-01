@@ -7,14 +7,22 @@ import config as cfg
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--exp_name'  , help='experiement name', type=str  , default='EXPFL')
-    parser.add_argument('--model'     , help='model'           , type=str  , default='CNN')
-    parser.add_argument('--dataset'   , help='dataset'         , type=str  , default='MNIST')
-    parser.add_argument('--optimizer' , help='optimizer'       , type=str  , default='SGD')
-    parser.add_argument('--lr'        , help='learning rate'   , type=float, default=1e-3)
-    parser.add_argument('--decay'     , help='weight decay'    , type=float, default=1e-4)
-    parser.add_argument('--batch_size', help='batch size'      , type=int  , default=64)
-    parser.add_argument('--seed'      , help='random seed'     , type=int  , default=0)
+    parser.add_argument('--exp_name'  , help='experiement name' , type=str  , default='EXPFL')
+    parser.add_argument('--model'     , help='model'            , type=str  , default='CNN')
+    parser.add_argument('--dataset'   , help='dataset'          , type=str  , default='MNIST')
+    parser.add_argument('--optimizer' , help='optimizer'        , type=str  , default='SGD')
+    parser.add_argument('--lr'        , help='learning rate'    , type=float, default=1e-3)
+    parser.add_argument('--decay'     , help='weight decay'     , type=float, default=1e-4)
+    parser.add_argument('--batch_size', help='batch size'       , type=int  , default=64)
+    parser.add_argument('--seed'      , help='random seed'      , type=int  , default=0)
+    ### FL PARAMS ###
+    parser.add_argument('--n_clients' , help='number of clients', type=int  , default=10)
+    parser.add_argument('--method'    , help='FL algorithm'     , type=str  , default='NaiveClient')
+    parser.add_argument('--alpha'     , help='Dirichlet alpha'  , type=float, default=0.5)
+    ### DP PARAMS ###
+    parser.add_argument('--epsilon'   , help='epsilon'          , type=float, default=2.0)
+    parser.add_argument('--delta'     , help='delta'            , type=float, default=1e-2)
+    parser.add_argument('--clip_norm' , help='clip norm'        , type=float, default=2.0)
     args = parser.parse_args()
     return args
     
